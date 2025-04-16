@@ -22,8 +22,11 @@ set tabpagemax=50
 set sessionoptions-=options
 set viewoptions-=options
 set nolangremap
+set nobackup
+set nowritebackup
+set noswapfile
 set undofile
-set undodir="~/.local/state/vim"
+set undodir="/home/f1sty/.cache/vim/undo"
 set undolevels=10000
 
 " lsp
@@ -43,6 +46,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " mappings
 nmap <leader>dd :r !date +\%F<cr>
+nmap ]b :bn<cr>
+nmap [b :bp<cr>
 
 " fzf.vim mappings
 nmap <leader>ff :Files<cr>
@@ -54,5 +59,7 @@ nmap <leader>fm :Marks<cr>
 
 " lsp mappings
 nmap <leader>lf :LspFormat<cr>
-nmap <leader>ld :LspGotoDeclaration<cr>
+nmap <leader>le :LspGotoDeclaration<cr>
 nmap <leader>li :LspGotoImpl<cr>
+nmap <leader>la :LspCodeAction<cr>
+nmap <leader>ld :LspDiagCurrent<cr>
